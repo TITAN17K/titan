@@ -1,0 +1,136 @@
+#contextMenu {
+  position: absolute;
+  z-index: 10000;
+  width: 150px;
+  background-color: rgb(46, 46, 44, 0.8);
+  border-radius: 10px;
+  transform: scale(0);
+  transform-origin: top left;
+  cursor: pointer;
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+}
+#contextMenu.active2 {
+  transform: scale(1);
+  transition: transform 200ms ease-in-out;
+}
+
+#contextMenu .item {
+  padding: 8px 10px;
+  font-size: 15px;
+  color: #eee;
+
+}
+
+#contextMenu .item:hover {
+  background: rgba(23, 23, 22, 0.5);
+  border-radius: 10px;
+}
+
+#contextMenu .item i {
+  margin: 2px 0px;
+  border-color: var(--skin-color);
+
+}
+
+.colors1 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.colors1 span {
+  display: inline-block;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  margin-top: 10px;
+}
+
+.colors1 .color-1 {
+  background: #ec1839; 
+}
+
+.colors1 .color-2 {
+  background: #5f89f3;
+}
+
+.colors1 .color-3 {
+  background: #62ffc3;
+}
+
+.colors1 .color-4 {
+  background: #8854e7;
+}
+
+.colors1 .color-5 {
+  background: #f18d5e;
+}
+
+.web a {
+  color: white;
+  text-decoration: none;
+}
+
+
+/* Preloader */
+
+.preloaderBG {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #000;
+  z-index: 100;
+  position: relative;
+}
+
+.preloader{
+  position: relative;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  background: linear-gradient(45deg,transparent, transparent 40%, #e5f403);
+  animation: animate 1s linear infinite;
+}
+
+@keyframes animate {
+  0%{
+    transform: rotate(0deg);
+    filter: hue-rotate(0deg);
+  }
+  100%{
+    transform: rotate(360deg);
+    filter: hue-rotate(360deg);
+  }
+}
+
+.preloader::before{
+  content: '';
+  position: absolute;
+  top: 6px;
+  bottom: 6px;
+  left: 6px;
+  right: 6px;
+  background: #000;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.preloader::after{
+  content: '';
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  background: linear-gradient(45deg,transparent, transparent 40%, #e5f403);
+  border-radius: 50%;
+  filter: blur(30px);
+}
+
+.preloaderText {
+
+  position: fixed;
+  color: #ec1839;
+}
